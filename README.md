@@ -1,4 +1,4 @@
-# Kapow-
+# Kapow!
 --------------------------------------------------- DESCRIPCIÓN  ESPAÑOL ---------------------------------------------------
 
 Proyecto de fin del primer curso de Desarrollos Aplicaciones Plataformas en CENEC.
