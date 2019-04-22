@@ -6,7 +6,7 @@
 package kapow;
 
 /**
- *
+ * Pruebaasdadsa
  * @author Kitsu
  */
 public class Kapow {
