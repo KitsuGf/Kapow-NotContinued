@@ -2,9 +2,9 @@
 --------------------------------------------------- DESCRIPCIÓN  ESPAÑOL ---------------------------------------------------
 
 Proyecto de fin del primer curso de Desarrollos Aplicaciones Plataformas en CENEC.
-Autor: Juan Miguel Montes Martín.
-Asignatura: Programación.
-Profesor: Miguel Páramos AKA SuperGuerrero de la Programación. (Desde el cariño y respeto).
+  - Autor: Juan Miguel Montes Martín.
+  - Asignatura: Programación.
+  - Profesor: Miguel Páramos AKA SuperGuerrero de la Programación. (Desde el cariño y respeto).
 
 Sobre la aplicación:
 
