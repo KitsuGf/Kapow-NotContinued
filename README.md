@@ -29,9 +29,9 @@ De momento esto es todo lo que quiero en el proyecto.
 
 
 Final project of the first course of Applications Development Platforms in CENEC.
-Author: Juan Miguel Montes Martín.
-Subject: Programming.
-Teacher: Miguel Páramos AKA SuperSayan of Programming. 
+  - Author: Juan Miguel Montes Martín.
+  - Subject: Programming.
+  - Teacher: Miguel Páramos AKA SuperSayan of Programming. 
 
 About the application:
 
