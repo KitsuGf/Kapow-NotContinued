@@ -5,10 +5,12 @@
  */
 package user;
 
+import humandata.Human;
+
 /**
  * Class for User to create a User with Password.
  * @author Kitsu
  */
-public class User {
+public class User extends Human{
     
 }

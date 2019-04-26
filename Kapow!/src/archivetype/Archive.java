@@ -5,10 +5,12 @@
  */
 package archivetype;
 
+import humandata.CommonData;
+
 /**
  * Class Data to create information from the Archive(Comic, Manga...).
  * @author Kitsu
  */
-public class Archive {
+public class Archive extends CommonData {
     
 }

@@ -10,6 +10,6 @@ package humandata;
  * Human class for get the data for make the user.
  * @author Kitsu
  */
-public class Human {
+public class Human extends CommonData {
     
 }
