@@ -3,19 +3,12 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package kapow;
+package archivetype;
 
 /**
- * Pruebaasdadsa
+ * Class for Mangas, this class have atributes from Mangas.
  * @author Kitsu
  */
-public class Kapow {
-
-    /**
-     * @param args the command line arguments
-     */
-    public static void main(String[] args) {
-        // TODO code application logic here
-    }
+public class Manga {
     
 }
