@@ -9,8 +9,16 @@ import humandata.CommonData;
 
 /**
  * Class Data to create information from the Archive(Comic, Manga...).
- * @author Kitsu
+ * This class have the atributes: Number of Page, Saga Complete or not, Franquice, Distributor, Description, Saga, Author and Genre.
+ * @author Kitsu.
  */
 public class Archive extends CommonData {
-    
+    int nPag;
+    boolean sComp;
+    String fran;
+    String dist;
+    String desc;
+    String saga;
+    String author;
+    String genre;
 }

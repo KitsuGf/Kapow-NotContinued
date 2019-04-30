@@ -6,15 +6,19 @@
 package main;
 
 import java.util.Scanner;
+import user.User;
 
 /**
- * Pruebaasdadsa
- *
+ * 
+ * Kapow is an APP to simulate a BiblioComic where you can share, upload colections and review the comics or manga.
+ * 
  * @author Kitsu
  */
 public class Kapow {
 
     /**
+     * 
+     * Main for APP Kapow.
      * @param args the command line arguments
      */
     public static void main(String[] args) {
@@ -34,6 +38,9 @@ public class Kapow {
                 break;
             case 2:
                 System.out.println("Come and register yourself here!");
+                
+                User user1 = new User();
+                System.out.println(user1.getName() + user1.getTele() + user1.getCountry() + user1.getCity() + user1.getCp() + user1.getDni() + user1.getMail() + user1.getnUser() + user1.getPassUser());   
                 break;
             case 3:
                 System.out.println("Here you can loging!");
@@ -42,4 +49,5 @@ public class Kapow {
 
         }
     }
+
 }
