@@ -15,15 +15,10 @@ import java.util.Scanner;
  * @author Kitsu.
  */
 public class CommonData {
-    Scanner sc = new Scanner(System.in);
-    String name = sc.nextLine();
-    //Date nDate = sc.next();
-    public Scanner getSc() {
-        return sc;
-    }
+    String name;
 
-    public void setSc(Scanner sc) {
-        this.sc = sc;
+    public CommonData(String name) {
+        this.name = name;
     }
 
     public String getName() {

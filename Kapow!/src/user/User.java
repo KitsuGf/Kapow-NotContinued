@@ -5,33 +5,51 @@
  */
 package user;
 
-import humandata.CommonData;
-import java.util.Scanner;
+import java.sql.Date;
 
+import common.CommonData;
+import exception.InvalidGenreException;
 
 /**
- * Class for User to create a User with Password.
- * This class have the atributes: Telephone, Country, City, PostalCode, DNI, mail, Name User, Pass User.
+ * Class for User to create a User with Password. This class have the atributes:
+ * Telephone, Country, City, PostalCode, DNI, mail, Name User, Pass User.
+ *
  * @author Kitsu.
  */
-public class User extends CommonData{
+public class User extends CommonData {
 
-    Scanner sc = new Scanner(System.in);
-    int tele = sc.nextInt();
-    String country = sc.nextLine();
-    String city = sc.nextLine(); 
-    String cp = sc.nextLine();
-    String dni = sc.nextLine();
-    String mail = sc.nextLine();
-    String nUser = sc.nextLine();
-    String passUser = sc.nextLine();
+    private String lastName;
+    private int tele;
+    private boolean genre;
+    private String country;
+    private String city;
+    private int cp;
+    private String dni;
+    private String mail;
+    private String nUser;
+    private String passUser;
 
-    public Scanner getSc() {
-        return sc;
+    public User(String name, Date dateUser, String lastName, int tele, char genre, String country, String city, int cp, String dni, String mail, String nUser, String passUser) throws InvalidGenreException {
+
+        super(name, dateUser);
+        this.lastName = lastName;
+        this.tele = tele;
+        this.setGenre(genre);
+        this.country = country;
+        this.city = city;
+        this.cp = cp;
+        this.dni = dni;
+        this.mail = mail;
+        this.nUser = nUser;
+        this.passUser = passUser;
     }
 
-    public void setSc(Scanner sc) {
-        this.sc = sc;
+    public String getLastName() {
+        return lastName;
+    }
+
+    public void setLastName(String lastName) {
+        this.lastName = lastName;
     }
 
     public int getTele() {
@@ -40,6 +58,25 @@ public class User extends CommonData{
 
     public void setTele(int tele) {
         this.tele = tele;
+    }
+
+    public char getGenre() {
+        if (this.genre) {
+            return 'f';
+        } else {
+            return 'm';
+        }
+    }
+
+    public final void setGenre(char genre) throws InvalidGenreException {
+        if (genre == 'f' || genre == 'F') {
+            this.genre = true;
+        } else if (genre == 'm' || genre == 'M') {
+            this.genre = false;
+        } else {
+            throw new InvalidGenreException(genre + " is not"
+                    + "a valid genre. Only m and f are accepted.");
+        }
     }
 
     public String getCountry() {
@@ -58,11 +95,11 @@ public class User extends CommonData{
         this.city = city;
     }
 
-    public String getCp() {
+    public int getCp() {
         return cp;
     }
 
-    public void setCp(String cp) {
+    public void setCp(int cp) {
         this.cp = cp;
     }
 
@@ -97,7 +134,5 @@ public class User extends CommonData{
     public void setPassUser(String passUser) {
         this.passUser = passUser;
     }
-    
-    
-   
+
 }
