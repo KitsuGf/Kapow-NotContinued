@@ -4,7 +4,7 @@
 Proyecto de fin del primer curso de Desarrollos Aplicaciones Plataformas en CENEC.
   - Autor: Juan Miguel Montes Martín.
   - Asignatura: Programación.
-  - Profesor: Miguel Páramos AKA SuperGuerrero de la Programación. (Desde el cariño y respeto).
+  - Profesor: Miguel Páramos.
 
 Sobre la aplicación:
 
@@ -31,7 +31,7 @@ De momento esto es todo lo que quiero en el proyecto.
 Final project of the first course of Applications Development Platforms in CENEC.
   - Author: Juan Miguel Montes Martín.
   - Subject: Programming.
-  - Teacher: Miguel Páramos AKA SuperSayan of Programming. 
+  - Teacher: Miguel Páramos. 
 
 About the application:
 
