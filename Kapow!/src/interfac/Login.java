@@ -154,6 +154,11 @@ public class Login extends JPanel{
 		textUser.setColumns(10);
 		
 		textPass = new JPasswordField();
+		textPass.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				btnIni.doClick();
+			}
+		});
 		textPass.setBounds(205, 159, 272, 30);
 		add(textPass);
 		
