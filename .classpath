@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<classpath>
+	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER"/>
+	<classpathentry kind="src" path="HashCode/src"/>
+	<classpathentry kind="src" path="Kapow!/libr/jcalend/src"/>
+	<classpathentry kind="src" path="Kapow!/libr/mysql-connector-java-8.0.15/src/build/java"/>
+	<classpathentry kind="src" path="Kapow!/libr/mysql-connector-java-8.0.15/src/demo/java"/>
+	<classpathentry kind="src" path="Kapow!/libr/mysql-connector-java-8.0.15/src/generated/java"/>
+	<classpathentry kind="src" path="Kapow!/libr/mysql-connector-java-8.0.15/src/legacy/java"/>
+	<classpathentry kind="src" path="Kapow!/libr/mysql-connector-java-8.0.15/src/main/core-api/java"/>
+	<classpathentry kind="src" path="Kapow!/libr/mysql-connector-java-8.0.15/src/main/core-impl/java"/>
+	<classpathentry kind="src" path="Kapow!/libr/mysql-connector-java-8.0.15/src/main/protocol-impl/java"/>
+	<classpathentry kind="src" path="Kapow!/libr/mysql-connector-java-8.0.15/src/main/user-api/java"/>
+	<classpathentry kind="src" path="Kapow!/libr/mysql-connector-java-8.0.15/src/main/user-impl/java"/>
+	<classpathentry kind="src" path="Kapow!/libr/mysql-connector-java-8.0.15/src/test/java"/>
+	<classpathentry kind="src" path="Kapow!/src"/>
+	<classpathentry kind="lib" path="Kapow!/jgoodies-forms-1.8.0-sources.jar"/>
+	<classpathentry kind="lib" path="Kapow!/jgoodies-forms-1.8.0.jar"/>
+	<classpathentry kind="lib" path="Kapow!/libr/jcalend/lib/jcalendar-1.4.jar"/>
+	<classpathentry kind="lib" path="Kapow!/libr/jcalend/lib/jgoodies-common-1.2.0.jar"/>
+	<classpathentry kind="lib" path="Kapow!/libr/jcalend/lib/jgoodies-looks-2.4.1.jar"/>
+	<classpathentry kind="lib" path="Kapow!/libr/jcalend/lib/junit-4.6.jar"/>
+	<classpathentry kind="lib" path="Kapow!/libr/mailer/javax.mail.jar"/>
+	<classpathentry kind="lib" path="Kapow!/libr/mysql-connector-java-8.0.15/lib/c3p0-0.9.1-pre6.jar"/>
+	<classpathentry kind="lib" path="Kapow!/libr/mysql-connector-java-8.0.15/lib/jboss-common-jdbc-wrapper-src.jar"/>
+	<classpathentry kind="lib" path="Kapow!/libr/mysql-connector-java-8.0.15/lib/jboss-common-jdbc-wrapper.jar"/>
+	<classpathentry kind="lib" path="Kapow!/libr/mysql-connector-java-8.0.15/lib/protobuf-java-3.6.1.jar"/>
+	<classpathentry kind="lib" path="Kapow!/libr/mysql-connector-java-8.0.15/lib/slf4j-api-1.6.1.jar"/>
+	<classpathentry kind="lib" path="Kapow!/libr/mysql-connector-java-8.0.15/mysql-connector-java-8.0.15.jar"/>
+	<classpathentry kind="output" path="Kapow!/bin"/>
+</classpath>
