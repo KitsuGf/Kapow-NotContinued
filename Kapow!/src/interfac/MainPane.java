@@ -18,17 +18,21 @@ import archivetype.Archive;
 import java.awt.Color;
 
 
-
-
-;
-
 /**
- * Class of Common data between Archive and User.
- * This class have the atributes: Name and Date shared with Archive and user.
+ * Interface for MainPanel 
+ * 
  * @author Kitsu.
  */
 
 public class MainPane extends JPanel{
+	
+	/**
+	 * MainPanel interface, this panel have buttons for upload comic,
+	 * see the profile of the user and see the comics
+	 * 
+	 *@Ventana @Login @User
+	 */
+	
 	
 	private Ventana ventana;
 	private User usuario;
@@ -41,7 +45,7 @@ public class MainPane extends JPanel{
 		setSize(new Dimension(1280, 720));
 		setLayout(null);
 		
-		
+		//JPanel Profile
 		JPanel profile = new JPanel();
 		profile.setOpaque(false);
 		profile.setBounds(10, 13, 252, 286);
@@ -49,7 +53,7 @@ public class MainPane extends JPanel{
 		profile.setLayout(null);
 		
 		
-		
+		//JLabels
 		JLabel lblUser = new JLabel();
 		lblUser.setForeground(Color.BLACK);
 		lblUser.setBackground(new Color(0, 0, 0));
@@ -69,7 +73,7 @@ public class MainPane extends JPanel{
 		colection.setBounds(274, 13, 994, 340);
 		add(colection);
 		
-		
+		//Function array to walk the tree path and find the folders of genres
 		File[] genComic = Archive.listarGeneros();
 		for (int i = 0; i < genComic.length ; i++) {
 			JButton boton = new JButton(genComic[i].getName());
@@ -79,6 +83,8 @@ public class MainPane extends JPanel{
 			colection.repaint();
 		}
 		
+		
+		//A lot of trys of my self to make this work correctly
 		/*
 		JButton btnMostrarColeccion = new JButton("Mostrar coleccion");
 		btnMostrarColeccion.setBounds(431, 23, 158, 25);
@@ -116,7 +122,8 @@ public class MainPane extends JPanel{
 		colection.setLayout(null);
 		//colection.add(btnMostrarColeccion);
 		
-	
+		//More Labels
+		//Layer for the label comics
 		JLabel label_3 = new JLabel("");
 		label_3.setIcon(new ImageIcon("img\\comics.png"));
 		label_3.setBounds(0, 0, 994, 340);
@@ -127,7 +134,7 @@ public class MainPane extends JPanel{
 		expose.setBounds(274, 367, 994, 340);
 		add(expose);
 		expose.setLayout(null);
-		
+		//Layer for the label comics
 		JLabel label_4 = new JLabel("");
 		label_4.setBounds(0, 0, 994, 340);
 		label_4.setIcon(new ImageIcon("img\\comics.png"));
@@ -139,11 +146,7 @@ public class MainPane extends JPanel{
 		add(buttons);
 		buttons.setLayout(null);
 		
-		JButton btnVolver = new JButton("Volver");
-		btnVolver.setFont(new Font("Consolas", Font.BOLD, 13));
-		btnVolver.setBounds(56, 249, 130, 46);
-		buttons.add(btnVolver);
-		
+		//Button for upload comics and coverpage
 		JButton btnSubirArchivo = new JButton("Subir Archivo");
 		btnSubirArchivo.setFont(new Font("Consolas", Font.BOLD, 13));
 		btnSubirArchivo.addActionListener(new ActionListener() {
@@ -154,6 +157,19 @@ public class MainPane extends JPanel{
 		btnSubirArchivo.setBounds(56, 83, 130, 46);
 		buttons.add(btnSubirArchivo);
 		
+		
+		//JButton for go back 
+		JButton btnVolver = new JButton("Volver");
+		btnVolver.setFont(new Font("Consolas", Font.BOLD, 13));
+		btnVolver.setBounds(56, 249, 130, 46);
+		buttons.add(btnVolver);
+		btnVolver.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				v.setPantallaLogin();
+			}
+		});
+		
+		//Button for showing the profile of the user
 		JButton btnPerfil = new JButton("Perfil");
 		btnPerfil.setFont(new Font("Consolas", Font.BOLD, 13));
 		btnPerfil.addActionListener(new ActionListener() {
@@ -163,17 +179,13 @@ public class MainPane extends JPanel{
 		});
 		btnPerfil.setBounds(56, 25, 130, 46);
 		buttons.add(btnPerfil);
-		
+		//Layer for the button
 		JLabel label_2 = new JLabel("");
 		label_2.setIcon(new ImageIcon("img\\buttonera.png"));
 		label_2.setBounds(0, 0, 250, 340);
 		buttons.add(label_2);
-		btnVolver.addActionListener(new ActionListener() {
-			public void actionPerformed(ActionEvent e) {
-				v.setPantallaLogin();
-			}
-		});
 		
+		//Background label
 		JLabel label = new JLabel("");
 		label.setBounds(0, 0, 1280, 720);
 		label.setIcon(new ImageIcon("img\\wp720.png"));
