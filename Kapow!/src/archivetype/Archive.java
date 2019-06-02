@@ -49,6 +49,7 @@ public class Archive extends CommonData {
         return nPag;
     }
 
+    //Set the pag number of the comic
     public void setnPag(int nPag) {
         this.nPag = nPag;
     }
@@ -59,7 +60,7 @@ public class Archive extends CommonData {
 		return sComp;
 	}
 
-
+    //Set if the saga is completed or not with yes or no
 	public void setsComp(String sComp) {
 		this.sComp = sComp;
 	}
@@ -68,7 +69,8 @@ public class Archive extends CommonData {
 	public String getFran() {
         return fran;
     }
-
+	
+	//Set the franquice name of the comic
     public void setFran(String fran) {
         this.fran = fran;
     }
@@ -76,7 +78,7 @@ public class Archive extends CommonData {
     public String getDist() {
         return dist;
     }
-
+    //Set the distributor name of the comic
     public void setDist(String dist) {
         this.dist = dist;
     }
@@ -85,7 +87,7 @@ public class Archive extends CommonData {
     public String getSaga() {
         return saga;
     }
-
+    //Set the saga name of the comic
     public void setSaga(String saga) {
         this.saga = saga;
     }
@@ -93,7 +95,7 @@ public class Archive extends CommonData {
     public String getAuthor() {
         return author;
     }
-
+    //Set the author name of the comic
     public void setAuthor(String author) {
         this.author = author;
     }
@@ -101,7 +103,7 @@ public class Archive extends CommonData {
     public String getGenre() {
         return genre;
     }
-
+    //Set the genre of the comic
     public void setGenre(String genre) {
         this.genre = genre;
     }
@@ -116,26 +118,36 @@ public class Archive extends CommonData {
    //listarGeneros is a fuction for list the generes of the comics
    public static File[]  listarGeneros() {
     
+	   //Make an string with the path of the proyect with the categories
 	   String path = "./comic"; 
-
+	   
+	   
        String files;
+       //File folder is now the path of the proyect
        File folder = new File(path);
+       //Array called listOfFiles is and list from the files of the folder in the path
        File[] listOfFiles = folder.listFiles(); 
-
+       //This bucle is for get a list of the files, when the bucle find one, start again the bucle to find anocher
+       //The bucle stop when no more files finded.
        for (int i = 0; i < listOfFiles.length; i++)         {
-
-           if (!listOfFiles[i].isFile())             {
+    	   //If the bucle find something different of file, like a folder, get the name of the folder for console
+           if (!listOfFiles[i].isFile()){
+        	   //Files equals list the files witht he name
                files = listOfFiles[i].getName();
+               //Print the files name
                System.out.println(files);
            }
            
        }
+    //Return was needed because is an static function and need a return value,
+    //in this case, the function is an array so the return need be an a array, 
+    //and the array we want to return is the list of the files named.
 	return listOfFiles;
     	
     	
     	
     	
-       
+  //Try repair this fuck*ng fuctions i can´t resolve.
     	
  /* Aquí la carpeta donde queremos buscar
     String path = "./comic"; 
