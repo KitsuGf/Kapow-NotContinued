@@ -159,7 +159,7 @@ public class MainPane extends JPanel{
 		
 		
 		//JButton for go back 
-		JButton btnVolver = new JButton("Volver");
+		JButton btnVolver = new JButton("Desconectar");
 		btnVolver.setFont(new Font("Consolas", Font.BOLD, 13));
 		btnVolver.setBounds(56, 249, 130, 46);
 		buttons.add(btnVolver);
