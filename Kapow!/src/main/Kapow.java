@@ -20,8 +20,8 @@ public class Kapow {
     /**
      *
      * Main for APP Kapow.
-     *
-     * @param args the command line arguments
+     * The main get only the extended from the Ventana
+     * @param @Ventana
      */
     public static void main(String[] args) {
           Ventana lg = new Ventana();

@@ -30,6 +30,16 @@ import javax.swing.JSeparator;
 import java.awt.Cursor;
 
 public class ForgetPass extends JPanel{
+	
+	/**
+	* ForgetPass class
+	* 
+	* This class is created to make an ForgetClass function to the user
+	* 
+	* @param Ventana
+	*/
+	
+	
 	//Vars for forgetPass
 	private Ventana ventana;
 	private JTextField textEmail;

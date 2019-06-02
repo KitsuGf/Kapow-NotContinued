@@ -13,12 +13,23 @@ import common.CommonData;
 
 /**
  * Class Data to create information from the Archive(Comics).
- * This class have the atributes: Number of Page, Saga Complete or not, Franquice, Distributor, Description, Saga, Author and Genre.
+ * 
  * @author Kitsu.
  */
 
-//This class extends from CommonData class what have two atributes bwetween comic and user
+
+
+
 public class Archive extends CommonData {
+	
+	
+	/**
+	 * Archive class
+	 * 
+	 * This class have the atributes: Number of Page, Saga Complete or not, Franquice, Distributor, Description, Saga, Author and Genre.
+	 * 
+	 * @param CommonData
+	 */
  
 	
 	//Vars for constructor

@@ -15,13 +15,24 @@ import java.awt.Color;
 
 /**
  * Class for making a load screen after loging.
- * The class make a load screen what show a ProgressBar maked with timer, when the ProgressBar fills full, 
- * loadScreen set the next jpanel to MainPanel.
+ * 
+ * 
  * @author Kitsu.
  */
 
 
 public class LoadScreen extends JPanel {
+	
+	
+	/**
+	* LoadScreen class
+	* 
+	* The class make a load screen what show a ProgressBar maked with timer, when the ProgressBar fills full, 
+	* loadScreen set the next jpanel to MainPanel.
+	* @Ventana @Timer @ActionListener
+	*/
+	
+	
 	//Vars needed for make the loadscreen
 	private Ventana ventana;
 	private Timer t;

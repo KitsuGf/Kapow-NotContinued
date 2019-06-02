@@ -9,11 +9,21 @@ import java.sql.Date;
 
 /**
  * Class of Common data between Archive and User.
- * This class have the atributes: Name and Date shared with Archive and User.
+ * 
  * @author Kitsu.
  */
 
 public class CommonData {
+	
+	/**
+	* CommonData Class
+	* 
+	* This class have the atributes: Name and Date shared with Archive and User.
+	* 
+	* @CommonData @Date
+	*/
+	
+	
 	//Vars of the constructor
     String name;
     Date dateUser;
