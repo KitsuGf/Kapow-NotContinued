@@ -77,7 +77,7 @@ public class Ventana extends JFrame {
 	}
 	
 	public void setPantallaRegistroCorrecto() {
-		setSize(new Dimension(1280, 752));
+		setSize(new Dimension(899, 620));
 		this.setContentPane(this.registerCorrect);
 		
 		
