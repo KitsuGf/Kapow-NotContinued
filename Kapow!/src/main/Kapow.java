@@ -6,6 +6,7 @@
 package main;
 
 
+import exception.InvalidGenreException;
 import interfac.Ventana;
 
 /**
@@ -22,8 +23,9 @@ public class Kapow {
      * Main for APP Kapow.
      * The main get only the extended from the Ventana
      * @param @Ventana
+     * @throws InvalidGenreException 
      */
-    public static void main(String[] args) {
+    public static void main(String[] args) throws InvalidGenreException {
           Ventana lg = new Ventana();
           
           

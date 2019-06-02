@@ -89,8 +89,7 @@ public class User extends CommonData {
         } else if (genre == 'm' || genre == 'M') {
             this.genre = false;
         } else {
-            throw new InvalidGenreException(genre + " is not"
-                    + "a valid genre. Only m and f are accepted.");
+            throw new InvalidGenreException("Genre can´t be unselected, choose one.");
         }
     }
     

@@ -64,7 +64,7 @@ public class Register extends JPanel {
 	String charGenero; //This var in special is for make a Genre in to a char
 	SimpleDateFormat formDate; //Simpleformatdate for making the format correct of the Date
 
-	public Register(Ventana v) {
+	public Register(Ventana v) throws InvalidGenreException  {
 		super();
 		ventana=v;
 		setSize(new Dimension(899, 580));
@@ -321,6 +321,7 @@ public class Register extends JPanel {
 						//This is to converse the util.Date to sql.Date in the constructor
 						java.util.Date utilDate = dateChooser.getDate();
                         java.sql.Date sqlDate = new java.sql.Date(utilDate.getTime());
+                        //Setter to user constructor
 						ventana.setUsuario(new User(textName.getText(), sqlDate, textLast.getText(), Integer.parseInt(textTele.getText()), charGenero.charAt(0), textCountry.getText(), textCity.getText(), Integer.parseInt(textCp.getText()), textDni.getText(), textEmail.getText(), textUser.getText(), String.copyValueOf(textPass.getPassword())));
 					} catch (NumberFormatException e1) {
 						// TODO Auto-generated catch block
@@ -357,6 +358,7 @@ public class Register extends JPanel {
 				} catch (SQLException ex) {
 					// TODO Auto-generated catch block
 					ex.printStackTrace();
+					
 				}	
 
 			}
@@ -411,7 +413,7 @@ public class Register extends JPanel {
 		add(background);
 
 
-		//THIS IF CATCH THE CASE WHEN GENRE ES NOT SELECTED
+		//This if catch the case when genre is not selected and show a dialog
 		btnRegister.addMouseListener(new MouseAdapter() {
 			
 			@Override

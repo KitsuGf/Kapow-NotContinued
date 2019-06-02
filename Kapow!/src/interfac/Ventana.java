@@ -4,6 +4,7 @@ import java.awt.Dimension;
 
 import javax.swing.JFrame;
 
+import exception.InvalidGenreException;
 import user.User;
 
 
@@ -49,7 +50,7 @@ public class Ventana extends JFrame {
 		this.usuario = usuario;
 	}
 
-	public Ventana() {
+	public Ventana() throws InvalidGenreException {
 		//Set various panels
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		setIconImage(Toolkit.getDefaultToolkit().getImage("img\\logo.png"));
