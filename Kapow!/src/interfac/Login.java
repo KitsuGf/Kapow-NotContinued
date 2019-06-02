@@ -143,16 +143,18 @@ public class Login extends JPanel{
 				
 		});
 		
-		//Differents labels for the interface
+		
 		btnIni.setFont(new Font("Consolas", Font.BOLD, 13));
 		btnIni.setBounds(286, 201, 106, 30);
 		add(btnIni);
-		
+		//JTextFields for username and password
 		textUser = new JTextField();
 		textUser.setBounds(205, 115, 273, 30);
 		add(textUser);
 		textUser.setColumns(10);
 		
+		//This passwordfield have an actionlistener to do a "buttonclick". This allows you can press "Enter key"
+		//For login
 		textPass = new JPasswordField();
 		textPass.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
