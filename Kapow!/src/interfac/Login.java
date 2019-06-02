@@ -24,12 +24,24 @@ import user.User;
 import javax.swing.JSeparator;
 
 /**
- * Class of Common data between Archive and User.
- * This class have the atributes: Name and Date shared with Archive and user.
+ * Login interface with connection to user in database
+ * 
  * @author Kitsu.
  */
 
 public class Login extends JPanel{
+	
+	
+	/**
+	* Login class
+	* 
+	* This is the interface from user login, here have the connection to
+	* dataBase for login the user
+	* 
+	* @Ventana 
+	*/
+	
+	//Vars for class Login
 	private Ventana ventana;
 	private JTextField textUser;
 	private JPasswordField textPass;
@@ -39,7 +51,7 @@ public class Login extends JPanel{
 	private JLabel lblForgetPass;
 	private JLabel lblBackground;
 	
-	
+	//The login start
 	public Login(Ventana v) {
 		super();
 		ventana=v;
@@ -48,45 +60,51 @@ public class Login extends JPanel{
 		setBackground(Color.DARK_GRAY);
 		setLayout(null);
 	
-		
+		//Component separator 
 		JSeparator separator = new JSeparator();
 		separator.setBounds(34, 244, 514, 7);
 		add(separator);
-		
+		//Component label for select the logo icon
 		JLabel lblIconKapow = new JLabel("");
 		lblIconKapow.setHorizontalAlignment(SwingConstants.CENTER);
 		lblIconKapow.setIcon(new ImageIcon("img\\logo.png"));
 		lblIconKapow.setBounds(0, 13, 594, 89);
 		add(lblIconKapow);
 		
+		//JButton for connect to database with the user and password registered
 		JButton btnIni = new JButton("Iniciar");
 		btnIni.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
-				
+				//Connection to Database
 				Connection conn;
 				try {
 					conn = DriverManager.getConnection(
 							"jdbc:mysql://51.158.162.242:3306/Kapow",
 							"kitsu", "toor");
 				
-				
+				//loginStatement get the query of database
 				PreparedStatement loginStatement
                 = conn.prepareStatement(
                         "select * from user where nUser=? "
                         + "and nPassword=? ");
-				
+		//This string copy the value of the password		
 		String pass = String.copyValueOf(textPass.getPassword());
+		//This String get the text of the textlabel
 		String nUser = textUser.getText();
-		
-		
-		
-		
+
+		//The login statement get nUser and pass vars
         loginStatement.setString(1, nUser);
         loginStatement.setString(2, pass);
+        //Resulset foundUser save the Result of the query execute
         ResultSet foundUser = loginStatement.executeQuery();
+        
+        //If the user is registered in the database and the foundUser find it then
+        //make the next:
         if (foundUser.next()) {
         	
         	 try {
+        		//Set the data finded in the database to the constructor
+        		//Usuario and get the parameters from database
 				ventana.setUsuario(new User(foundUser.getString("firstname"),
 						 				foundUser.getDate("dateUser"),
 						 				foundUser.getString("lastname"),
@@ -104,17 +122,17 @@ public class Login extends JPanel{
 				e.printStackTrace();
 			}
 	 				
-        	String userReg = foundUser.getString("nUser");
+        	//close the foundUser statement
         	foundUser.close();
         	
-        	//JOptionPane.showMessageDialog(null, "Loged as " +userReg + ", Welcome!");
-        	
+        	//this setText if for making the textLabel white again
+        	//its like erase the label
         	textUser.setText("");
 			textPass.setText("");
+			//If the user log correctly, load the next JPanel
         	v.setLoadScreen();
-        	
-        	
-		}else {
+        //If the username or password is not in the database the app calls an ShowMessageDialog with error
+		}else{
 			JOptionPane.showMessageDialog(null, "Username or Password wrong, ty again.", "Login Error", JOptionPane.ERROR_MESSAGE);
 		}
 				} catch (SQLException e) {
@@ -125,6 +143,7 @@ public class Login extends JPanel{
 				
 		});
 		
+		//Differents labels for the interface
 		btnIni.setFont(new Font("Consolas", Font.BOLD, 13));
 		btnIni.setBounds(286, 201, 106, 30);
 		add(btnIni);
@@ -151,26 +170,31 @@ public class Login extends JPanel{
 		lblPassword.setBounds(89, 163, 104, 27);
 		add(lblPassword);
 		
+		//Button register, this one set the JPanel with register fields
 		textRegister = new JButton("Registrar");
 		textRegister.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
+				//This clear the textlabel
 				textUser.setText("");
 				textPass.setText("");
+				//Next JPanel in this case is RegisterPanel
 				v.setPantallaRegistro();
 			}
 		});
 		textRegister.setFont(new Font("Consolas", Font.BOLD, 13));
-		
-		
 		textRegister.setBounds(371, 264, 106, 22);
 		add(textRegister);
 		
+		//Button for go to the panel RecoverPassword
 		JButton textRecu = new JButton("Recuperar");
 		textRecu.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
+				//Set the panel to the recoverPassword
 				v.setPantallaRecuperar();
 			}
 		});
+		
+		//More labels of the interface
 		textRecu.setFont(new Font("Consolas", Font.BOLD, 13));
 		textRecu.setBounds(371, 306, 106, 22);
 		add(textRecu);
@@ -187,6 +211,7 @@ public class Login extends JPanel{
 		lblForgetPass.setBounds(134, 307, 225, 21);
 		add(lblForgetPass);
 		
+		//Label with background of the JPanel
 		lblBackground = new JLabel("");
 		lblBackground.setIcon(new ImageIcon("img\\wp600.png"));
 		lblBackground.setBounds(0, 0, 594, 365);
