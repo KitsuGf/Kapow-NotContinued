@@ -79,13 +79,13 @@ public class MainPane extends JPanel{
 			colection.repaint();
 		}
 		
-		
+		/*
 		JButton btnMostrarColeccion = new JButton("Mostrar coleccion");
 		btnMostrarColeccion.setBounds(431, 23, 158, 25);
 		btnMostrarColeccion.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
 				
-				/*String path = "./comic/"; 
+				String path = "./comic/"; 
 
 		        String files;
 		        File folder = new File(path);
@@ -98,7 +98,7 @@ public class MainPane extends JPanel{
 		                System.out.println(files);
 		                JButton boton = new JButton (listOfFiles[i.getName()]);
 		            }
-		        }*/
+		        }
 				
 				
 				
@@ -109,13 +109,12 @@ public class MainPane extends JPanel{
 					
 					colection.add(boton);
 					
-				}*/
+				}
 			}
 				
-		});
+		});*/
 		colection.setLayout(null);
-		
-		colection.add(btnMostrarColeccion);
+		//colection.add(btnMostrarColeccion);
 		
 	
 		JLabel label_3 = new JLabel("");
@@ -141,20 +140,28 @@ public class MainPane extends JPanel{
 		buttons.setLayout(null);
 		
 		JButton btnVolver = new JButton("Volver");
-		btnVolver.setBounds(56, 242, 130, 40);
+		btnVolver.setFont(new Font("Consolas", Font.BOLD, 13));
+		btnVolver.setBounds(56, 249, 130, 46);
 		buttons.add(btnVolver);
 		
 		JButton btnSubirArchivo = new JButton("Subir Archivo");
+		btnSubirArchivo.setFont(new Font("Consolas", Font.BOLD, 13));
 		btnSubirArchivo.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
 				v.setPantallaUploadComic();
 			}
 		});
-		btnSubirArchivo.setBounds(56, 83, 130, 40);
+		btnSubirArchivo.setBounds(56, 83, 130, 46);
 		buttons.add(btnSubirArchivo);
 		
 		JButton btnPerfil = new JButton("Perfil");
-		btnPerfil.setBounds(56, 25, 130, 40);
+		btnPerfil.setFont(new Font("Consolas", Font.BOLD, 13));
+		btnPerfil.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				v.setShowProfile();
+			}
+		});
+		btnPerfil.setBounds(56, 25, 130, 46);
 		buttons.add(btnPerfil);
 		
 		JLabel label_2 = new JLabel("");

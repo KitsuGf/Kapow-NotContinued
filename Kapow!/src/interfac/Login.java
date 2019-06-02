@@ -21,7 +21,7 @@ import javax.swing.SwingConstants;
 
 import exception.InvalidGenreException;
 import user.User;
-import user.UserReg;
+
 
 import javax.swing.JSeparator;
 
@@ -128,17 +128,17 @@ public class Login extends JPanel{
 				
 		});
 		
-		btnIni.setFont(new Font("Consolas", Font.PLAIN, 13));
+		btnIni.setFont(new Font("Consolas", Font.BOLD, 13));
 		btnIni.setBounds(286, 201, 106, 30);
 		add(btnIni);
 		
 		textUser = new JTextField();
-		textUser.setBounds(205, 115, 272, 30);
+		textUser.setBounds(205, 115, 273, 30);
 		add(textUser);
 		textUser.setColumns(10);
 		
 		textPass = new JPasswordField();
-		textPass.setBounds(205, 158, 272, 30);
+		textPass.setBounds(205, 159, 272, 30);
 		add(textPass);
 		
 		JLabel lblUsuario = new JLabel("Usuario");
@@ -162,7 +162,7 @@ public class Login extends JPanel{
 				v.setPantallaRegistro();
 			}
 		});
-		textRegister.setFont(new Font("Consolas", Font.PLAIN, 13));
+		textRegister.setFont(new Font("Consolas", Font.BOLD, 13));
 		
 		
 		textRegister.setBounds(371, 264, 106, 22);
@@ -174,7 +174,7 @@ public class Login extends JPanel{
 				v.setPantallaRecuperar();
 			}
 		});
-		textRecu.setFont(new Font("Consolas", Font.PLAIN, 13));
+		textRecu.setFont(new Font("Consolas", Font.BOLD, 13));
 		textRecu.setBounds(371, 306, 106, 22);
 		add(textRecu);
 		

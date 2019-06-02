@@ -30,7 +30,7 @@ import com.toedter.calendar.JDateChooser;
 
 import exception.InvalidGenreException;
 import user.User;
-import user.UserReg;
+
 
 
 /**
@@ -289,6 +289,7 @@ public class Register extends JPanel {
 		 */		
 
 		JButton btnRegister = new JButton("Registrarse");
+		btnRegister.setFont(new Font("Consolas", Font.BOLD, 13));
 		btnRegister.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 
@@ -365,7 +366,7 @@ public class Register extends JPanel {
 		});
 		
 		
-		btnRegister.setBounds(776, 241, 106, 30);
+		btnRegister.setBounds(757, 238, 130, 46);
 		add(btnRegister);
 		
 		/*									||-------------------------------------------------||		
@@ -374,6 +375,7 @@ public class Register extends JPanel {
 		 */	
 
 		JButton button = new JButton("Volver");
+		button.setFont(new Font("Consolas", Font.BOLD, 13));
 		button.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				textName.setText("");
@@ -392,7 +394,7 @@ public class Register extends JPanel {
 			}
 			
 		});
-		button.setBounds(776, 290, 106, 30);
+		button.setBounds(757, 296, 130, 46);
 		add(button);
 
 		/*									||-------------------------------------------------||		

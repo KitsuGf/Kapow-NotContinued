@@ -58,6 +58,7 @@ public class ForgetPass extends JPanel{
 	
 	//BackButton for back to the login JPanel
 	JButton btnVolver = new JButton("Volver");
+	btnVolver.setFont(new Font("Consolas", Font.BOLD, 13));
 	btnVolver.addActionListener(new ActionListener() {
 		public void actionPerformed(ActionEvent arg0) {
 			textEmail.setText("");
@@ -69,6 +70,7 @@ public class ForgetPass extends JPanel{
 	
 	//Recover button and action for getting the recovery email
 	btnRecuperar = new JButton("Recuperar");
+	btnRecuperar.setFont(new Font("Consolas", Font.BOLD, 13));
 	btnRecuperar.setCursor(Cursor.getPredefinedCursor(Cursor.DEFAULT_CURSOR));
 	btnRecuperar.addActionListener(new ActionListener() {
 		public void actionPerformed(ActionEvent arg0) {

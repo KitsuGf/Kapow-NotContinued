@@ -5,7 +5,7 @@ import java.awt.Dimension;
 import javax.swing.JFrame;
 
 import user.User;
-import user.UserReg;
+
 
 import java.awt.Toolkit;
 
@@ -25,18 +25,9 @@ public class Ventana extends JFrame {
 	private UploadComic uploadComic;
 	private Profile showProfile;
 	private User usuario;
-	private UserReg usuarioRegistrado;
 	private LoadScreen loadScreen;
 	private Ventana ventana;
 	
-	
-	public UserReg getUsuarioReg() {
-		return usuarioRegistrado;
-		
-	}
-	public void setUsuarioReg(UserReg usuarioReg) {
-		this.usuarioRegistrado = usuarioReg;
-	}
 	
 	
 	public User getUsuario() {
@@ -72,7 +63,7 @@ public class Ventana extends JFrame {
 	}
 	
 	public void setPantallaRegistro() {
-		setSize(new Dimension(899, 615));
+		setSize(new Dimension(899, 647));
 		this.login.setVisible(false);
 		this.registro.setVisible(true);
 		this.setContentPane(this.registro);
@@ -101,14 +92,16 @@ public class Ventana extends JFrame {
 	
 	public void setPantallaUploadComic() {
 		this.setContentPane(this.uploadComic);
-		setSize(new Dimension(899, 615));
+		setSize(new Dimension(899, 647));
 		
 	}
 	
 	public void setShowProfile() {
-		this.setContentPane(this.showProfile);
 		this.showProfile=new Profile(this);
 		setSize(new Dimension(899, 615));
+		this.setContentPane(this.showProfile);
+		
+		
 		
 	}
 	

@@ -208,10 +208,7 @@ public class UploadComic extends JPanel{
 		uploadComic.setFont(new Font("Dialog", Font.BOLD, 12));
 		uploadComic.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
-				
-				
-			
-				    
+
 				    JFileChooser chooser = new JFileChooser();
 				    //chooser.setCurrentDirectory(new File("comic\\"));
 				    chooser.getCurrentDirectory();
@@ -225,9 +222,7 @@ public class UploadComic extends JPanel{
 				            ex.printStackTrace();
 				        }
 				    }
-				
-				
-				
+
 				
 				/*
 				
@@ -302,6 +297,7 @@ public class UploadComic extends JPanel{
 		add(uploadImg);
 		
 		JButton btnSubirComic = new JButton("Subir comic");
+		btnSubirComic.setFont(new Font("Consolas", Font.BOLD, 13));
 		btnSubirComic.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				try {
@@ -337,7 +333,7 @@ public class UploadComic extends JPanel{
 		});
 		
 		
-		btnSubirComic.setBounds(673, 321, 108, 35);
+		btnSubirComic.setBounds(647, 323, 130, 46);
 		add(btnSubirComic);
 		
 		selecComic = new JTextField();
@@ -394,6 +390,16 @@ public class UploadComic extends JPanel{
 		radioShero.setBounds(334, 428, 119, 29);
 		add(radioShero);
 		genresC.add(radioShero);
+		
+		JButton btnVolver = new JButton("Volver");
+		btnVolver.setFont(new Font("Consolas", Font.BOLD, 13));
+		btnVolver.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent arg0) {
+				v.setPantallaMain();
+			}
+		});
+		btnVolver.setBounds(757, 556, 130, 46);
+		add(btnVolver);
 		
 		
 		
