@@ -34,12 +34,22 @@ import user.User;
 
 
 /**
- * Class of Common data between Archive and User.
- * This class have the atributes: Name and Date shared with Archive and user.
+ * Class register for user
+ * 
  * @author Kitsu.
  */
 
 public class Register extends JPanel {
+	
+	
+	/**
+	 * This class make a form register where the user write name, nickname etc.
+	 * 
+	 * @Ventana
+	 */
+	
+	
+	//Vars needed
 	private JTextField textName;
 	private JTextField textLast;
 	private JTextField textTele;
@@ -49,10 +59,10 @@ public class Register extends JPanel {
 	private JTextField textDni;
 	private JTextField textEmail;
 	private JTextField textUser;
-	private JPasswordField textPass;
-	private Ventana ventana;
-	String charGenero;
-	SimpleDateFormat formDate;
+	private JPasswordField textPass; 
+	private Ventana ventana; 
+	String charGenero; //This var in special is for make a Genre in to a char
+	SimpleDateFormat formDate; //Simpleformatdate for making the format correct of the Date
 
 	public Register(Ventana v) {
 		super();
@@ -60,24 +70,20 @@ public class Register extends JPanel {
 		setSize(new Dimension(899, 580));
 		setLayout(null);
 		formDate = new SimpleDateFormat("dd/MM/yyyy");
-		
+		//Making again a datachooser conversion
 		JDateChooser dateChooser = new JDateChooser();
 		dateChooser.setDateFormatString("dd/MM/yyyy");
 		dateChooser.addMouseListener(new MouseAdapter() {
 			@Override
 			public void mouseClicked(MouseEvent arg0) {
-				
 			}
 		});
 		dateChooser.setBounds(141, 225, 143, 27);
 		add(dateChooser);
 		
 
-		/*									||-------------------------------------------------||		
-										    ||		 	   SEPARATORS FOR INTERFACE		   	   ||
-										    ||-------------------------------------------------||
-		 */
 
+		//Separators 
 		JSeparator sepVert = new JSeparator();
 		sepVert.setOrientation(SwingConstants.VERTICAL);
 		sepVert.setForeground(Color.WHITE);
@@ -99,11 +105,8 @@ public class Register extends JPanel {
 
 
 
-		/*									||-------------------------------------------------||		
-										    ||		 PERSONAL DATA FROM REGISTER NEW USER	   ||
-										    ||-------------------------------------------------||
-		 */
-
+		
+		//Labels
 		JLabel lblDatosPersonales = new JLabel("DATOS PERSONALES");
 		lblDatosPersonales.setForeground(Color.WHITE);
 		lblDatosPersonales.setFont(new Font("Consolas", Font.BOLD, 28));
@@ -196,8 +199,9 @@ public class Register extends JPanel {
 		genre.setBounds(22, 184, 78, 27);
 		add(genre);
 
+		//Buttongroup for make the char genre only F or M
 		ButtonGroup genero=new ButtonGroup();
-
+		//Radialbutton for make the selected only M or F
 		JRadioButton btnM = new JRadioButton("Masculino");
 		btnM.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
@@ -247,10 +251,8 @@ public class Register extends JPanel {
 		add(userDate);
 
 
-		/*									||-------------------------------------------------||		
-										    ||		  PASSWORD AND NICKNAME FOR USER		   ||
-										    ||-------------------------------------------------||
-		 */	
+				
+		//User and Password
 
 		JLabel user = new JLabel("Usuario");
 		user.setForeground(Color.WHITE);
@@ -281,27 +283,24 @@ public class Register extends JPanel {
 		dataUser.setBounds(585, 13, 195, 34);
 		add(dataUser);
 
-
-
-		/*									||-------------------------------------------------||		
-										    ||		  FUNCTION FOR REGISTER A NEW USER		   ||
-										    ||-------------------------------------------------||
-		 */		
-
+		
+		
+		//Function for register user
 		JButton btnRegister = new JButton("Registrarse");
 		btnRegister.setFont(new Font("Consolas", Font.BOLD, 13));
 		btnRegister.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 
 				try {
-
+					
 					Statement registerStatement;
+					//Connection to de Database
 					Connection conn = DriverManager.getConnection(
 							"jdbc:mysql://51.158.162.242:3306/Kapow",
 							"kitsu", "toor");
 					registerStatement = conn.createStatement();	
 
-
+					//Insert to the database values
 					String insert =	"insert into user (firstname,lastname,dateUser,tel,genre,country,city,cp,dni,mail,nuser,npassword)"
 							+ " values('" 
 							+ textName.getText() + "','"
@@ -331,15 +330,14 @@ public class Register extends JPanel {
 						e1.printStackTrace();
 					}
 						
-					
 					registerStatement.executeUpdate(insert);	
-					
 					registerStatement.close();
 					
-					
+					//This query is for get the last user registered
 					PreparedStatement foundId = conn
 		                    .prepareStatement("select * from user where id=(select max(id) FROM user)");
 		            ResultSet foundUser = foundId.executeQuery();
+		            //This is for clear the jfieldtext
 					if (foundUser.next()) {
 						textName.setText("");
 						textLast.setText("");
@@ -369,15 +367,13 @@ public class Register extends JPanel {
 		btnRegister.setBounds(752, 184, 130, 46);
 		add(btnRegister);
 		
-		/*									||-------------------------------------------------||		
-	    									||		  BUTTON FOR BACK TO LOGIN JPANEL		   ||
-	    									||-------------------------------------------------||
-		 */	
-
+	
+		//Button for go back to the jpanel 
 		JButton button = new JButton("Volver");
 		button.setFont(new Font("Consolas", Font.BOLD, 13));
 		button.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
+				//This is for clear the jtextfield
 				textName.setText("");
 				textLast.setText("");
 				textTele.setText("");
@@ -397,10 +393,7 @@ public class Register extends JPanel {
 		button.setBounds(610, 184, 130, 46);
 		add(button);
 
-		/*									||-------------------------------------------------||		
-										    ||		  LABELS FOR DIFFERENT IMG AND ICON		   ||
-										    ||-------------------------------------------------||
-		 */		
+		//Labels
 
 		JLabel kapowIco = new JLabel("");
 		kapowIco.setIcon(new ImageIcon("img\\logo.png"));
@@ -418,11 +411,7 @@ public class Register extends JPanel {
 		add(background);
 
 
-		/*									||-------------------------------------------------||		
-	    									||THIS IF CATCH THE CASE WHEN GENRE ES NOT SELECTED||
-	    									||-------------------------------------------------||
-		*/	
-
+		//THIS IF CATCH THE CASE WHEN GENRE ES NOT SELECTED
 		btnRegister.addMouseListener(new MouseAdapter() {
 			
 			@Override
