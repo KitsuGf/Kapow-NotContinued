@@ -366,7 +366,7 @@ public class Register extends JPanel {
 		});
 		
 		
-		btnRegister.setBounds(757, 238, 130, 46);
+		btnRegister.setBounds(752, 184, 130, 46);
 		add(btnRegister);
 		
 		/*									||-------------------------------------------------||		
@@ -394,7 +394,7 @@ public class Register extends JPanel {
 			}
 			
 		});
-		button.setBounds(757, 296, 130, 46);
+		button.setBounds(610, 184, 130, 46);
 		add(button);
 
 		/*									||-------------------------------------------------||		

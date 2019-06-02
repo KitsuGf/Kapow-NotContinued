@@ -14,6 +14,11 @@ import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
 import java.io.File;
 import java.io.FileWriter;
+import java.io.IOException;
+import java.nio.file.CopyOption;
+import java.nio.file.Files;
+import java.nio.file.Path;
+import java.nio.file.Paths;
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.SQLException;
@@ -30,6 +35,8 @@ import javax.swing.SwingConstants;
 import javax.swing.filechooser.FileNameExtensionFilter;
 import javax.swing.filechooser.FileSystemView;
 import javax.swing.JMenuItem;
+import javax.swing.JOptionPane;
+
 import java.awt.Button;
 import javax.swing.JRadioButton;
 import com.toedter.calendar.JDateChooser;
@@ -228,37 +235,33 @@ public class UploadComic extends JPanel{
 
 		uploadComic.addActionListener(new ActionListener() {
 
-			public void actionPerformed(ActionEvent arg0) {
-					//JFilechooser for get the path and the archive in the window
-				    JFileChooser chooser = new JFileChooser();
-				    //chooser.setCurrentDirectory(new File("comic\\"));
-				    //Get the chooser in the current directory
-				    chooser.getCurrentDirectory();
-				    int retrival = chooser.showSaveDialog(null);
-				    if (retrival == JFileChooser.APPROVE_OPTION) {
-				        try {
-				            FileWriter fw = new FileWriter(chooser.getSelectedFile());
-				            String sb = chooser.getSelectedFile().toString();
-				            fw.write(sb);
-				        } catch (Exception ex) {
-				            ex.printStackTrace();
-				        }
-				    }
-
-				
-				/*
-				fc.setDialogTitle("Selecciona un comic");
-				int returnValue = fc.showOpenDialog(null);
-				// int returnValue = jfc.showSaveDialog(null);
-
-				if (returnValue == JFileChooser.APPROVE_OPTION) {
-					File selectedFile = fc.getSelectedFile();
-					String pathFile = selectedFile.getAbsolutePath();
-					selecComic.setText(pathFile);
-					//System.out.println(selectedFile.getAbsolutePath());
-				}*/
-				    
+			
+			@Override
+			public void actionPerformed(ActionEvent e) {
+				try {
+					
+					JFileChooser file = new JFileChooser();
+					file.showOpenDialog(uploadComic);
+					File archiv = file.getSelectedFile();
+					if (archiv != null) {
+						String dest = System.getProperty("user.dir") + "/comic/"+archiv.getName();
+						Path desty = Paths.get(dest);
+						String orig = archiv.getPath();
+						Path origin = Paths.get(orig);
+						Files.copy(desty, origin);
+						JOptionPane.showMessageDialog(null,"El archivo se subirá a la categoria "+genSelected);
+						
+					}
+					} catch (IOException ex) {
+						// TODO Auto-generated catch block
+						ex.printStackTrace();
+					}
+					
+					
+						
 			}
+
+		
 		});
 		uploadComic.setBounds(810, 140, 79, 24);
 		add(uploadComic);

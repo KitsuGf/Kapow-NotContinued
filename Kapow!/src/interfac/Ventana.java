@@ -63,7 +63,7 @@ public class Ventana extends JFrame {
 	}
 	
 	public void setPantallaRegistro() {
-		setSize(new Dimension(899, 647));
+		setSize(new Dimension(899, 610));
 		this.login.setVisible(false);
 		this.registro.setVisible(true);
 		this.setContentPane(this.registro);
