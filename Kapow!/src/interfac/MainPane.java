@@ -166,9 +166,10 @@ public class MainPane extends JPanel{
 		btnVolver.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				v.setPantallaLogin();
+				
 			}
 		});
-		
+
 		//Button for showing the profile of the user
 		JButton btnPerfil = new JButton("Perfil");
 		btnPerfil.setFont(new Font("Consolas", Font.BOLD, 13));
