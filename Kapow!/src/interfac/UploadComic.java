@@ -37,14 +37,24 @@ import com.toedter.calendar.JDateChooser;
 ;
 
 /**
- * This class is an interface for the UploadComic feature, here the user can 
- * Upload a comic with the info of the comic and a cover page 
+ * 
+ * Class UploadComic, this class register data from the comic and upload 
+ * a PDF and CoverPage of the comic
+ * 
  * 
  * @author Kitsu.
  */
 
 public class UploadComic extends JPanel{
 	
+	/**
+	 * This class is an interface for the UploadComic feature, here the user can 
+	 * Upload a comic with the info of the comic and a cover page 
+	 * 
+	 * @Ventana 
+	 */
+	
+	//Vars of the UploadComic
 	private Ventana ventana;
 	JFileChooser fc = new JFileChooser(FileSystemView.getFileSystemView().getHomeDirectory());
 	String complete;
@@ -60,16 +70,20 @@ public class UploadComic extends JPanel{
 		setLayout(null);
 		ventana =v;
 		
-		
+		//This var formDate make the date format correctly
 		formDate = new SimpleDateFormat("dd/MM/yyyy");
 
+		//DateChooser its from api JCalendar, make an interface calendar to choose the
+		//Day, Month and Year
 		JDateChooser dateChooser = new JDateChooser();
+		//This set is for making a string with the correct format of the Date
 		dateChooser.setDateFormatString("dd/MM/yyyy");
 		dateChooser.addMouseListener(new MouseAdapter() {
 		});
 		dateChooser.setBounds(154, 480, 143, 27);
 		add(dateChooser);
 		
+		//JTextFields for the register data of the comic
 		JTextField textName = new JTextField();
 		textName.setBounds(154, 102, 272, 28);
 		add(textName);
@@ -94,6 +108,8 @@ public class UploadComic extends JPanel{
 		textAuthor.setBounds(154, 531, 272, 28);
 		add(textAuthor);
 		
+		
+		//Labels for interface
 		JLabel lblInfoComic = new JLabel("Datos del Comic");
 		lblInfoComic.setForeground(Color.WHITE);
 		lblInfoComic.setFont(new Font("Consolas", Font.BOLD, 28));
@@ -114,8 +130,7 @@ public class UploadComic extends JPanel{
 		lblPaginas.setBounds(12, 155, 91, 27);
 		add(lblPaginas);
 		
-		
-		
+
 		JLabel lblcompleta = new JLabel("\u00BFCompleta?");
 		lblcompleta.setForeground(Color.WHITE);
 		lblcompleta.setFont(new Font("Consolas", Font.BOLD, 23));
@@ -179,6 +194,8 @@ public class UploadComic extends JPanel{
 		lblSubirPortada.setBounds(621, 209, 169, 27);
 		add(lblSubirPortada);
 		
+		
+		//Separators
 		JSeparator separator = new JSeparator();
 		separator.setForeground(Color.WHITE);
 		separator.setBackground(Color.WHITE);
@@ -204,13 +221,18 @@ public class UploadComic extends JPanel{
 		lblSubeTuComic.setBounds(595, 15, 195, 34);
 		add(lblSubeTuComic);
 		
+		
+		//Button for request a directory and archive
 		Button uploadComic = new Button("...");
 		uploadComic.setFont(new Font("Dialog", Font.BOLD, 12));
-		uploadComic.addActionListener(new ActionListener() {
-			public void actionPerformed(ActionEvent arg0) {
 
+		uploadComic.addActionListener(new ActionListener() {
+
+			public void actionPerformed(ActionEvent arg0) {
+					//JFilechooser for get the path and the archive in the window
 				    JFileChooser chooser = new JFileChooser();
 				    //chooser.setCurrentDirectory(new File("comic\\"));
+				    //Get the chooser in the current directory
 				    chooser.getCurrentDirectory();
 				    int retrival = chooser.showSaveDialog(null);
 				    if (retrival == JFileChooser.APPROVE_OPTION) {
@@ -225,8 +247,6 @@ public class UploadComic extends JPanel{
 
 				
 				/*
-				
-				
 				fc.setDialogTitle("Selecciona un comic");
 				int returnValue = fc.showOpenDialog(null);
 				// int returnValue = jfc.showSaveDialog(null);
@@ -237,16 +257,19 @@ public class UploadComic extends JPanel{
 					selecComic.setText(pathFile);
 					//System.out.println(selectedFile.getAbsolutePath());
 				}*/
+				    
 			}
 		});
 		uploadComic.setBounds(810, 140, 79, 24);
 		add(uploadComic);
 		
-		
+		//For group the buttons and only chose one option
 		ButtonGroup comp=new ButtonGroup();
+		//RadioButton for get yes in the database
 		JRadioButton rdbtnSi = new JRadioButton("Si");
 		rdbtnSi.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
+				//If the radioButton yes is selected, write "Si"
 				if (rdbtnSi.isSelected()) {
 					complete = "Si";
 				}
@@ -259,9 +282,11 @@ public class UploadComic extends JPanel{
 		add(rdbtnSi);
 		comp.add(rdbtnSi);
 		
+		//RadioButton for get no in the database
 		JRadioButton rdbtnNo = new JRadioButton("No");
 		rdbtnNo.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
+				//If the radioButton yes is selected, write "No"
 				if (rdbtnNo.isSelected()) {
 					complete = "No";
 				}
@@ -275,54 +300,70 @@ public class UploadComic extends JPanel{
 		add(rdbtnNo);
 		comp.add(rdbtnNo);
 		
-		
+		//Button for request a directory and archive img
 		Button uploadImg = new Button("...");
 		uploadImg.setFont(new Font("Dialog", Font.BOLD, 12));
 		uploadImg.addActionListener(new ActionListener() {
+			
 			public void actionPerformed(ActionEvent e) {
-				
+				//Select a title with filechooser for the window
 				fc.setDialogTitle("Selecciona la portada");
+				//Set the all files filtered is a filter for not accept all the files,
+				//just the specified
 				fc.setAcceptAllFileFilterUsed(false);
+				//FileNameExtensionFilter is a where we tell the JFilechooser what type of 
+				//Files we want to choose
 				FileNameExtensionFilter filter = new FileNameExtensionFilter("Select only PNG, JPEG, JPG", "png", "jpeg", "jpg");
+				//Able the choose filter
 				fc.addChoosableFileFilter(filter);
+				//No dialog
 				int returnValue = fc.showOpenDialog(null);
+				
+				//If the button "Accept" is pressed, is "APPROVE_OPTION"
 				if (returnValue == JFileChooser.APPROVE_OPTION) {
+					//And the fileselected Path is printed
 					System.out.println(fc.getSelectedFile().getPath());
 				}
+				//Make a string of the getSelectedFile path 
 				String pathPort = fc.getSelectedFile().getPath();
+				//Now here we can see the path of the file in the textField
 				selecPort.setText(pathPort);
 			}
 		});
 		uploadImg.setBounds(810, 264, 79, 24);
 		add(uploadImg);
 		
+		//Button for add all the data from the comic to the database
 		JButton btnSubirComic = new JButton("Subir comic");
 		btnSubirComic.setFont(new Font("Consolas", Font.BOLD, 13));
 		btnSubirComic.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				try {
-
+					//Connection to the database
 					Statement registerStatement;
 					Connection conn = DriverManager.getConnection(
 							"jdbc:mysql://51.158.162.242:3306/Kapow",
 							"kitsu", "toor");
 					registerStatement = conn.createStatement();	
 					
-
+					//String for the insert values of the database
 					String insert =	"insert into archive (nameC,nPage,sComp,fran,distro,saga,author,genre,dateC)"
 							+ " values('" 
 							+ textName.getText() + "',"
 							+ textnPag.getText() + ",'"
-							+ complete + "','"
+							+ complete + "','" //This var is for get the chooser yes or no
 							+ textFran.getText() + "','"
 							+ textDistro.getText() + "','"	
 							+ textSaga.getText() + "','"
 							+ textAuthor.getText() + "','"
-							+ genSelected + "',"
-							+ "STR_TO_DATE('"+formDate.format(dateChooser.getDate())+ "','%d/%m/%Y')"
+							+ genSelected + "'," //This var is for get the genre selected only in 3 options
+							+ "STR_TO_DATE('"+formDate.format(dateChooser.getDate())+ "','%d/%m/%Y')" //Conversor of the data
 							+ ");";
+					
+					//Execute the insert in the database
 					registerStatement.executeUpdate(insert);
 					
+					//Close register statement
 					registerStatement.close();
 				} catch (SQLException ex) {
 					// TODO Auto-generated catch block
@@ -332,7 +373,7 @@ public class UploadComic extends JPanel{
 			}
 		});
 		
-		
+		//More Labels
 		btnSubirComic.setBounds(647, 323, 130, 46);
 		add(btnSubirComic);
 		
@@ -344,8 +385,9 @@ public class UploadComic extends JPanel{
 		selecPort.setBounds(518, 262, 272, 28);
 		add(selecPort);
 		
-
+		//Button for add all the data from the comic to the database
 		ButtonGroup genresC=new ButtonGroup();
+		//This radiobutton group is for get one of the three options
 		JRadioButton rdbtnDetectives = new JRadioButton("Detectives");
 		rdbtnDetectives.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
@@ -391,6 +433,8 @@ public class UploadComic extends JPanel{
 		add(radioShero);
 		genresC.add(radioShero);
 		
+		
+		//Button for coming back to the Main panel
 		JButton btnVolver = new JButton("Volver");
 		btnVolver.setFont(new Font("Consolas", Font.BOLD, 13));
 		btnVolver.addActionListener(new ActionListener() {
@@ -399,11 +443,10 @@ public class UploadComic extends JPanel{
 			}
 		});
 		btnVolver.setBounds(757, 556, 130, 46);
-		add(btnVolver);
+		add(btnVolver);	
 		
 		
-		
-		
+		//Label for background
 		JLabel label = new JLabel("");
 		label.setIcon(new ImageIcon("img\\900.png"));
 		label.setBounds(0, 0, 899, 615);
