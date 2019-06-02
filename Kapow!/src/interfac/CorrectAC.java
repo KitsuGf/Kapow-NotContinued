@@ -57,7 +57,7 @@ public class CorrectAC extends JPanel{
 		label_3.setBounds(86, 0, 750, 300);
 		add(label_3);
 		
-		JLabel lblNewLabel = new JLabel("New label");
+		JLabel lblNewLabel = new JLabel("");
 		lblNewLabel.setIcon(new ImageIcon("img\\900.png"));
 		lblNewLabel.setBounds(0, 0, 899, 615);
 		add(lblNewLabel);

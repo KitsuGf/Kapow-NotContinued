@@ -10,12 +10,22 @@ import user.User;
 import java.awt.Toolkit;
 
 /**
- * Class of Common data between Archive and User.
- * This class have the atributes: Name and Date shared with Archive and user.
+ * This class is the JFrame for all the JPanel
+ * 
  * @author Kitsu.
  */
 
 public class Ventana extends JFrame {
+	
+	
+	/**
+	 * This class is the JFrame for all the JPanel
+	 * 
+	 * The class get all the panels of the app
+	 * 
+	 * @author Kitsu.
+	 */
+
 
 	private Login login;
 	private Register registro;
