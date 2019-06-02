@@ -5,7 +5,6 @@ import javax.swing.JPasswordField;
 import javax.swing.JLabel;
 import javax.swing.JOptionPane;
 import javax.swing.JPanel;
-
 import java.awt.Color;
 import java.awt.event.ActionListener;
 import java.sql.Connection;
@@ -18,7 +17,6 @@ import java.awt.Dimension;
 import java.awt.Font;
 import javax.swing.ImageIcon;
 import javax.swing.SwingConstants;
-
 import exception.InvalidGenreException;
 import user.User;
 
@@ -40,7 +38,6 @@ public class Login extends JPanel{
 	private JLabel lblRegister;
 	private JLabel lblForgetPass;
 	private JLabel lblBackground;
-	private String passConversed;
 	
 	
 	public Login(Ventana v) {

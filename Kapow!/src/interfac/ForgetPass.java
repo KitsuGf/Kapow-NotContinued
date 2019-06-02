@@ -3,7 +3,6 @@ package interfac;
 /**
  * This class is an interface for recover the password with email integration
  * 
- * This class have the atributes: Name and Date shared with Archive and user.
  * @author Kitsu.
  */
 
@@ -31,6 +30,7 @@ import javax.swing.JSeparator;
 import java.awt.Cursor;
 
 public class ForgetPass extends JPanel{
+	//Vars for forgetPass
 	private Ventana ventana;
 	private JTextField textEmail;
 	private JButton btnRecuperar;

@@ -32,13 +32,6 @@ public class LoadScreen extends JPanel {
 		
 		setLayout(null);
 		
-		/*JLabel lblBienvenido = new JLabel("Bienvenido agente <dynamic>");
-		lblBienvenido.setHorizontalAlignment(SwingConstants.CENTER);
-		lblBienvenido.setForeground(new Color(128, 0, 0));
-		lblBienvenido.setFont(new Font("Yu Gothic Light", Font.PLAIN, 13));
-		lblBienvenido.setBounds(0, 37, 1280, 48);
-		add(lblBienvenido);*/
-		
 		JProgressBar progressBar = new JProgressBar();
 		progressBar.setBorder(null);
 		progressBar.setOpaque(true);
@@ -66,12 +59,11 @@ public class LoadScreen extends JPanel {
 		t = new Timer(150, al);
 		t.start();
 		
-	
-		
+
 		JLabel label = new JLabel("");
 		label.setLabelFor(this);
 		label.setBounds(0, 0, 1280, 720);
-		label.setIcon(new ImageIcon("C:\\Users\\Kitsu\\Desktop\\Kapow!\\img\\loadScren2.gif"));
+		label.setIcon(new ImageIcon("img\\loadScren2.gif"));
 		add(label);
 	}
 }
