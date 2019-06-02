@@ -96,8 +96,7 @@ public class ForgetPass extends JPanel{
 			PreparedStatement loginStatement
             = conn.prepareStatement(
                     "select nPassword, nUser from user where mail=? ");
-
-			
+		
 	String d = textEmail.getText();
 
     loginStatement.setString(1, textEmail.getText());
@@ -105,8 +104,11 @@ public class ForgetPass extends JPanel{
     if (foundUser.next()) {
     	
     	//Compose the email
+    	//Nickname of the user 
     	String nUser = foundUser.getString("nUser");
+    	//Password the user set in database
     	String nPassword = foundUser.getString("nPassword");
+    	//Message
     	String c = "Vaya vaya...Veo que "+nUser+" ha perdido su contraseña. \nPero no te preocupes, DrStrange retrocedera en el tiempo para devolvertela. \n\nTu contraseña es: " +nPassword+ " \n\nConsideralo un regalo de DrStrange. \n\nKapow!" ;
     	
     	//Wait cursor, this appears when the button is pressed and the email was sended, the WAIT_CURSOR start when the email is sended
