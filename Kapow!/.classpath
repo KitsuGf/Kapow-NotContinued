@@ -1,9 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <classpath>
-	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER"/>
 	<classpathentry kind="src" path="src"/>
-	<classpathentry exported="true" kind="lib" path="H:/Kitsu/mysql-connector-java-8.0.15/mysql-connector-java-8.0.15.jar"/>
-	<classpathentry exported="true" kind="lib" path="H:/Kitsu/mailer/javax.mail.jar"/>
-	<classpathentry exported="true" kind="lib" path="H:/Kitsu/jcalend/lib/jcalendar-1.4.jar"/>
+	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER">
+		<attributes>
+			<attribute name="module" value="true"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry kind="lib" path="D:/Kitsu/Estudio&amp;Dev/Librerias/mysql-connector-java-8.0.15/mysql-connector-java-8.0.15.jar"/>
+	<classpathentry kind="lib" path="D:/Kitsu/Estudio&amp;Dev/Librerias/mailer/javax.mail.jar"/>
+	<classpathentry kind="lib" path="D:/Kitsu/Estudio&amp;Dev/Librerias/jcalend/lib/jcalendar-1.4.jar"/>
 	<classpathentry kind="output" path="bin"/>
 </classpath>
