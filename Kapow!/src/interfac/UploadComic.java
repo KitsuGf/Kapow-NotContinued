@@ -244,11 +244,11 @@ public class UploadComic extends JPanel{
 					file.showOpenDialog(uploadComic);
 					File archiv = file.getSelectedFile();
 					if (archiv != null) {
-						String dest = System.getProperty("user.dir") + "/comic/"+archiv.getName();
+						String dest = System.getProperty("user.dir") + "/comic/"+genSelected+"/"+ archiv.getName();
 						Path desty = Paths.get(dest);
 						String orig = archiv.getPath();
 						Path origin = Paths.get(orig);
-						Files.copy(desty, origin);
+						Files.copy(origin, desty);
 						JOptionPane.showMessageDialog(null,"El archivo se subirá a la categoria "+genSelected);
 						
 					}
