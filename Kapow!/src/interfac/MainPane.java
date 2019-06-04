@@ -71,14 +71,15 @@ public class MainPane extends JPanel{
 		JPanel colection = new JPanel();
 		colection.setOpaque(false);
 		colection.setBounds(274, 13, 994, 340);
+		
 		add(colection);
 		
 		//Function array to walk the tree path and find the folders of genres
 		File[] genComic = Archive.listarGeneros();
 		for (int i = 0; i < genComic.length ; i++) {
 			JButton boton = new JButton(genComic[i].getName());
-			boton.setVisible(true);
 			colection.add(boton);
+			boton.setVisible(true);
 			colection.revalidate();
 			colection.repaint();
 		}
@@ -105,9 +106,7 @@ public class MainPane extends JPanel{
 		                JButton boton = new JButton (listOfFiles[i.getName()]);
 		            }
 		        }
-				
-				
-				
+
 				/*File[] genComic = Archive.listarGeneros();
 				for (int i = 0; i < genComic.length ; i++) {
 					JButton boton = new JButton(genComic[i].getName());

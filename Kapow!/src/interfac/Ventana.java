@@ -122,9 +122,7 @@ public class Ventana extends JFrame {
 		this.login.setVisible(false);
 		this.setContentPane(this.loadScreen);
 		this.loadScreen.setVisible(true);
-		
-		
-		
+
 	}
 }
 

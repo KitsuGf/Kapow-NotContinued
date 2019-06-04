@@ -240,7 +240,7 @@ public class UploadComic extends JPanel{
 			public void actionPerformed(ActionEvent e) {
 				try {
 					JFileChooser file = new JFileChooser();
-					fc.setDialogTitle("Selecciona el comic");
+					file.setDialogTitle("Selecciona el comic");
 					file.showOpenDialog(uploadComic);
 					File archiv = file.getSelectedFile();
 					if (archiv != null) {
@@ -339,7 +339,9 @@ public class UploadComic extends JPanel{
 				
 				
 				/*
-				
+				//This will be an litle guide for me
+				 * 
+				 * 
 				//Select a title with filechooser for the window
 				fc.setDialogTitle("Selecciona la portada");
 				//Set the all files filtered is a filter for not accept all the files,
