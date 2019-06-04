@@ -239,8 +239,8 @@ public class UploadComic extends JPanel{
 			@Override
 			public void actionPerformed(ActionEvent e) {
 				try {
-					
 					JFileChooser file = new JFileChooser();
+					fc.setDialogTitle("Selecciona el comic");
 					file.showOpenDialog(uploadComic);
 					File archiv = file.getSelectedFile();
 					if (archiv != null) {
@@ -309,6 +309,37 @@ public class UploadComic extends JPanel{
 		uploadImg.addActionListener(new ActionListener() {
 			
 			public void actionPerformed(ActionEvent e) {
+				
+				
+				try {
+                    
+                    JFileChooser fc = new JFileChooser();
+                    fc.setDialogTitle("Elige la portada");
+                    fc.setAcceptAllFileFilterUsed(false);
+                    FileNameExtensionFilter filter = new FileNameExtensionFilter("Select only PNG, JPEG, JPG", "png", "jpeg", "jpg");
+                    fc.addChoosableFileFilter(filter);
+                    fc.showOpenDialog(uploadComic);
+                    File archiv = fc.getSelectedFile();
+                    
+                    if (archiv != null) {
+                        String dest = System.getProperty("user.dir") + "/comic/"+genSelected+"/"+ archiv.getName();
+                        Path desty = Paths.get(dest);
+                        String orig = archiv.getPath();
+                        Path origin = Paths.get(orig);
+                        Files.copy(origin, desty);
+                        JOptionPane.showMessageDialog(null,"El archivo se subirá a la categoria "+genSelected);
+                        
+                    }
+                    } catch (IOException ex) {
+                        // TODO Auto-generated catch block
+                        ex.printStackTrace();
+                    }
+				
+				
+				
+				
+				/*
+				
 				//Select a title with filechooser for the window
 				fc.setDialogTitle("Selecciona la portada");
 				//Set the all files filtered is a filter for not accept all the files,
@@ -330,7 +361,7 @@ public class UploadComic extends JPanel{
 				//Make a string of the getSelectedFile path 
 				String pathPort = fc.getSelectedFile().getPath();
 				//Now here we can see the path of the file in the textField
-				selecPort.setText(pathPort);
+				selecPort.setText(pathPort);*/
 			}
 		});
 		uploadImg.setBounds(810, 264, 79, 24);

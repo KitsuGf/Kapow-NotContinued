@@ -75,7 +75,7 @@ public class Ventana extends JFrame {
 	}
 	//Set the JPanel of register screen
 	public void setPantallaRegistro() {
-		setSize(new Dimension(899, 610));
+		setSize(new Dimension(900, 610));
 		this.login.setVisible(false);
 		this.registro.setVisible(true);
 		this.setContentPane(this.registro);
@@ -89,7 +89,7 @@ public class Ventana extends JFrame {
 	}
 	//Set the JPanel of correct register screen
 	public void setPantallaRegistroCorrecto() {
-		setSize(new Dimension(899, 620));
+		setSize(new Dimension(900, 620));
 		this.setContentPane(this.registerCorrect);
 		
 		
@@ -104,13 +104,13 @@ public class Ventana extends JFrame {
 	//Set the JPanel of upload comic screen
 	public void setPantallaUploadComic() {
 		this.setContentPane(this.uploadComic);
-		setSize(new Dimension(899, 647));
+		setSize(new Dimension(900, 647));
 		
 	}
 	//Set the JPanel of showprofile screen
 	public void setShowProfile() {
 		this.showProfile=new Profile(this);
-		setSize(new Dimension(899, 615));
+		setSize(new Dimension(900, 615));
 		this.setContentPane(this.showProfile);
 		
 	}
