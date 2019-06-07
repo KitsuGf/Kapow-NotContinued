@@ -132,7 +132,6 @@ public class Archive extends CommonData {
 	   //Make an string with the path of the proyect with the categories
 	   String path = "./comic"; 
 	   
-	   
        String files;
        //File folder is now the path of the proyect
        File folder = new File(path);

@@ -72,18 +72,42 @@ public class MainPane extends JPanel{
 		colection.setOpaque(false);
 		colection.setBounds(274, 13, 994, 340);
 		
-		add(colection);
+		
 		
 		//Function array to walk the tree path and find the folders of genres
 		File[] genComic = Archive.listarGeneros();
 		for (int i = 0; i < genComic.length ; i++) {
-			JButton boton = new JButton(genComic[i].getName());
+			JButton btnPrueba = new JButton(genComic[i].getName());
+			btnPrueba.setBounds(73, 285, 97, 25);
+			colection.add(btnPrueba);
+			btnPrueba.setVisible(true);
+			colection.revalidate();
+			colection.repaint();
+			btnPrueba.addActionListener(new ActionListener() {
+				public void actionPerformed(ActionEvent arg0) {
+					File[] genComic = Archive.listarGeneros();
+					for (int i = 0; i < genComic.length ; i++) {
+						
+						JButton btnPrueba2 = new JButton(genComic[i].getName());
+						btnPrueba2.setBounds(73, 285, 97, 25);
+						colection.add(btnPrueba2);
+						btnPrueba2.setVisible(true);
+						colection.revalidate();
+						colection.repaint();
+					}
+				}
+			});
+			
+			/*JButton boton = new JButton(genComic[i].getName());
 			colection.add(boton);
+			colection.setFont(new Font("Consolas", Font.BOLD, 35));
 			boton.setVisible(true);
 			colection.revalidate();
 			colection.repaint();
+			*/
+			
 		}
-		
+		add(colection);
 		
 		//A lot of trys of my self to make this work correctly
 		/*
@@ -127,6 +151,10 @@ public class MainPane extends JPanel{
 		label_3.setIcon(new ImageIcon("img\\comics.png"));
 		label_3.setBounds(0, 0, 994, 340);
 		colection.add(label_3);
+		
+		
+		
+		
 		
 		JPanel expose = new JPanel();
 		expose.setOpaque(false);

@@ -27,9 +27,6 @@ public class Kapow {
      */
     public static void main(String[] args) throws InvalidGenreException {
           Ventana lg = new Ventana();
-          
-          
-        
     }
     
    
